@@ -40,8 +40,12 @@ flip.addEventListener('click', function () {
     
 })
 clear.addEventListener('click', function () {
-
+    let headNumber = 0
+    let tailNumber = 0
+    ChangeHNumber(`${headNumber}`)
+    ChangeTNumber(`${tailNumber}`)
 })
+
 
 
     // Flip Button Click Handler
