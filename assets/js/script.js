@@ -1,12 +1,48 @@
 // TODO: Declare any global variables we need
-
-
-document.addEventListener('DOMContentLoaded', function () {
-    // This is just a sanity check to make sure your JavaScript script is getting loaded
-    // You can remove it once you see it in your browser console in the developer tools
-    console.log('Hi')
+let penny = document.querySelector ('.coin')
+let flip = document.querySelector ('#flip')
+let clear = document.querySelector ('#clear')
+let response = document.querySelector ('.status')
+let heads = document.createElement ('heads')
+let tails = document.createElement ('tails')
+function ChangeHNumber (displayHNumber) {
+    let headNumber = document.querySelector ('#heads')
+    headNumber.innerHTML = displayHNumber
+}
+function ChangeTNumber (displayTNumber) {
+    let tailNumber = document.querySelector ('#tails')
+    tailNumber.innerHTML = displayTNumber
+}
+function ChangeHPercent (displayHPercent) {
+    let headPercent = document.querySelector ('#heads-percent')
+    headPercent.innerHTML = displayHPercent
+}
+function ChangeTPercent (displayTPercent) {
+    let tailPercent = document.querySelector ('#tails-percent')
+    tailPercent.innerHTML = displayTPercent
+}
+let headNumber = 0
+let headPercent = 0
+let tailNumber = 0
+let tailPercent = 0
 
     // TODO: Add event listener and handler for flip and clear buttons
+flip.addEventListener('click', function () {
+    let rolledValue = Math.ceil(Math.random() * 2)
+    if(rolledValue == 1) {
+        headNumber++
+    }
+        ChangeHNumber(`${headNumber}`)
+     if(rolledValue != 1) {
+        tailNumber++
+     }
+        ChangeTNumber(`${tailNumber}`)
+    
+})
+clear.addEventListener('click', function () {
+
+})
+
 
     // Flip Button Click Handler
         // TODO: Determine flip outcome
@@ -23,5 +59,3 @@ document.addEventListener('DOMContentLoaded', function () {
     // Clear Button Click Handler
         // TODO: Reset global variables to 0
         // TODO: Update the scoreboard (same logic as in flip button click handler)
-
-})
